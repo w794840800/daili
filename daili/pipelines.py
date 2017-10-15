@@ -8,4 +8,12 @@
 
 class DailiPipeline(object):
     def process_item(self, item, spider):
+        if spider.name =='xidaili':
+            with open("xidaili.txt","a") as f :
+                f.write(item['name']+'\n')
+
+        elif spider.name == 'kuiadaili':
+            with open("kuiadaili.txt",'a') as  f:
+                f.write(item['name']+'\n')
+
         return item
